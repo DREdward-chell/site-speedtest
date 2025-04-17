@@ -13,7 +13,7 @@ import SpeedTestEng from "@/components/SpeedTestEng.vue";
         <div>4: Скорость 171+</div>
         <div>Точность: 98%+</div>
       </div>
-      <SpeedTestEng class="limited" select="{{text.toString()}}" />
+      <SpeedTestEng class="limited"/>
     </div>
   </main>
 </template>

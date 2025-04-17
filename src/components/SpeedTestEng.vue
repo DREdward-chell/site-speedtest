@@ -12,6 +12,7 @@ let millis = 0;
 let speed = 0.0;
 let timer_interval = null;
 let speed_interval = null;
+let finnish = false;
 
 function round(a) {
   try {
@@ -36,6 +37,7 @@ function letterCheck(e) {
   if (!timer_is_ready) {
     timer();
     timer_is_ready = true;
+    finnish = false;
   }
   let id = current_id.toString();
   console.log(e.key)
@@ -45,7 +47,7 @@ function letterCheck(e) {
     nextLetter(current_id);
     current_id++;
     clicks++;
-  } else if (ID(id).className !== 'wrong') {
+  } else if (ID(id).className !== 'wrong' && !finnish) {
     ID(id).className = 'wrong';
     errors++;
     ID('error').textContent = 'Точность: ' + round(100 - 100 * (errors / l)) + '%';
@@ -54,6 +56,7 @@ function letterCheck(e) {
   if (current_id === l) {
     clearInterval(speed_interval);
     clearInterval(timer_interval);
+    finnish = true;
   }
 }
 
