@@ -8,11 +8,11 @@ import SpeedTestEng from "@/components/SpeedTestEng.vue";
 
   <main>
     <div class="centered beautiful">
-      <div style="text-align: left; display: flex; flex-direction: column; justify-content: center">
-        <div>5: Скорость 191+</div>
-        <div>4: Скорость 171+</div>
-        <div>Точность: 98%+</div>
-      </div>
+<!--      <div style="text-align: left; display: flex; flex-direction: column; justify-content: center">-->
+<!--        <div>5: Скорость 191+</div>-->
+<!--        <div>4: Скорость 171+</div>-->
+<!--        <div>Точность: 98%+</div>-->
+<!--      </div>-->
       <SpeedTestEng class="limited"/>
     </div>
   </main>
