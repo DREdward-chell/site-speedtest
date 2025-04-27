@@ -28,12 +28,15 @@ function timer() {
     ID('time').textContent = 'Время: ' + (millis / 10).toString();
   }, 100);
   speed_interval = setInterval(() => {
-    speed++;
+    speed += 0.1;
     ID('speed').textContent = 'Скорость: ' + round((clicks / speed) * 60);
-  }, 1000);
+  }, 100);
 }
 
 function letterCheck(e) {
+  if (e.key.toString() === 'Shift' || e.key.toString() === 'shift' || e.key.toString() === 'alt' || e.key.toString() === 'tab')
+    return;
+
   if (!timer_is_ready) {
     timer();
     timer_is_ready = true;
@@ -41,8 +44,7 @@ function letterCheck(e) {
   }
   let id = current_id.toString();
   console.log(e.key)
-  if (e.key.toString() === 'Shift' || e.key.toString() === 'shift' || e.key.toString() === 'alt' || e.key.toString() === 'tab')
-    return;
+
   if (e.key === ID(id).textContent) {
     nextLetter(current_id);
     current_id++;
@@ -110,5 +112,14 @@ useKeydownEvent(letterCheck)
   justify-content: center;
   flex-flow: row;
   padding: 1%;
+}
+
+.statistics {
+  flex-shrink: 0;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
 }
 </style>

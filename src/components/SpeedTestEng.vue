@@ -28,9 +28,9 @@ function timer() {
     ID('time').textContent = 'Время: ' + (millis / 10).toString();
   }, 100);
   speed_interval = setInterval(() => {
-    speed++;
+    speed += 0.1;
     ID('speed').textContent = 'Скорость: ' + round((clicks / speed) * 60);
-  }, 1000);
+  }, 100);
 }
 
 function letterCheck(e) {
@@ -114,5 +114,10 @@ useKeydownEvent(letterCheck)
 
 .statistics {
   flex-shrink: 0;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
 }
 </style>
