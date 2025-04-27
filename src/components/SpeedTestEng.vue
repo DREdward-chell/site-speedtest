@@ -34,6 +34,9 @@ function timer() {
 }
 
 function letterCheck(e) {
+  if (e.key.toString() === 'Shift' || e.key.toString() === 'Alt' || e.key.toString() === 'Tab')
+    return;
+  console.log(e.key.toString())
   if (!timer_is_ready) {
     timer();
     timer_is_ready = true;
@@ -41,8 +44,7 @@ function letterCheck(e) {
   }
   let id = current_id.toString();
   console.log(e.key)
-  if (e.key.toString() === 'Shift' || e.key.toString() === 'shift' || e.key.toString() === 'alt' || e.key.toString() === 'tab')
-    return;
+
   if (e.key === ID(id).textContent) {
     nextLetter(current_id);
     current_id++;
