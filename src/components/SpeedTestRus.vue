@@ -34,7 +34,8 @@ function timer() {
 }
 
 function letterCheck(e) {
-  if (e.key.toString() === 'Shift' || e.key.toString() === 'Alt' || e.key.toString() === 'Tab')
+  if (e.key.toString() === 'Shift' || e.key.toString() === 'Alt' || e.key.toString() === 'Tab' ||
+      e.key.toString() === 'CapsLock')
     return;
 
   if (!timer_is_ready) {
