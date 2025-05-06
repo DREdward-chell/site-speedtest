@@ -24,6 +24,8 @@ const currentView = computed(() => {
   <header>
   </header>
   <main>
+    <p>F5 для сброса/перезагрузки</p>
+
     <div>
       <button><a href="#/rus">Русский</a></button>
       <button><a href="#/eng">English</a></button>
